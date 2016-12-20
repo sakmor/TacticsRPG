@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour {
 	void Start () {		
 		generateMap();
 		generatePlayers();
-        sakmor();
 	}
 	
 	// Update
@@ -36,14 +35,6 @@ public class GameManager : MonoBehaviour {
 		if (players[currentPlayerIndex].HP > 0) players[currentPlayerIndex].TurnUpdate();
 		else nextTurn();
 	}
-    
-    //sakmor
-    void sakmor(){
-        foreach (Transform child in GameObject.Find("Map").transform)
-        {
-          child.gameObject.AddComponent(DrawCallMinimizer);
-        }
-    }
 	
 	void OnGUI () {
 		if (players[currentPlayerIndex].HP > 0) players[currentPlayerIndex].TurnOnGUI();

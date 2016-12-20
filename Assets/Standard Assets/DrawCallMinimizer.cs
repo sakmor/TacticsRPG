@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 /// <summary>
@@ -25,10 +25,10 @@ namespace DCM {
 
         [SerializeField]
         private bool
-            destroyOriginalGameObject = false;
+            destroyOriginalGameObject = true;
         [SerializeField]
         private bool
-            skipTextureAtlasing = false;
+            skipTextureAtlasing = true;
         public const string VERSION = "2.0";
         /// This option has a far longer preprocessing time at startup but leads to better runtime performance.
         void Start() {

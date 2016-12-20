@@ -224,7 +224,7 @@ public class Tile : MonoBehaviour {
 
 		GameObject newVisual = (GameObject)Instantiate(PREFAB, transform.position, Quaternion.Euler(new Vector3(0,0,0)));
 		newVisual.transform.parent = container.transform;
-
+//        newVisual.AddComponent(DCM);
 		visual = newVisual;
 	}
 }
