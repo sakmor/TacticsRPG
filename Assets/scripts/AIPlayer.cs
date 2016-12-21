@@ -4,7 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class AIPlayer : Player {
-	
+	Animator anim;
+
+	void Start () {
+		anim = GetComponent<Animator> ();
+		moveSpeed = 3.0f;
+	}
 	// Update
 	public override void Update () {
 		/*
@@ -13,7 +18,15 @@ public class AIPlayer : Player {
 		} else {
 			transform.GetComponent<Renderer>().material.color = Color.white;
 		}
-		*/
+		*/if (HP <= 0) {
+			anim.SetBool ("death", true);
+			Destroy (this);
+			this.gridPosition = new Vector2 (0, 0);
+			GameManager.instance.getCurrentPlayerTile() ;
+			
+			//transform.rotation = Quaternion.Euler(new Vector3(90,0,0));
+			//transform.GetComponent<Renderer>().material.color = Color.red;
+		}
 		base.Update();
 	}
 	
@@ -30,6 +43,12 @@ public class AIPlayer : Player {
 	public override void TurnUpdate ()
 	{
 		if (positionQueue.Count > 0) {
+			Vector3 lookat = positionQueue [0] - transform.position;
+			lookat.Normalize ();
+			transform.forward = lookat;
+
+
+			anim.SetBool ("walking", true);
 			transform.position += (positionQueue[0] - transform.position).normalized * moveSpeed * Time.deltaTime;
 			
 			if (Vector3.Distance(positionQueue[0], transform.position) <= 0.1f) {
@@ -37,6 +56,7 @@ public class AIPlayer : Player {
 				positionQueue.RemoveAt(0);
 				if (positionQueue.Count == 0) {
 					actionPoints--;
+					anim.SetBool ("walking", false);
 				}
 			}
 			
@@ -88,4 +108,9 @@ public class AIPlayer : Player {
 	public override void TurnOnGUI () {
 		base.TurnOnGUI ();
 	}
+
+
+
+
+
 }

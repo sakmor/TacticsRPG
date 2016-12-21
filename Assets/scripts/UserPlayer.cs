@@ -3,6 +3,13 @@ using System.Collections;
 
 public class UserPlayer : Player {
 	
+	Animator anim;
+
+	void Start () {
+		anim = GetComponent<Animator> ();
+		moveSpeed = 3.0f;
+	}
+
 	// Update
 	public override void Update () {
 		/*
@@ -22,13 +29,20 @@ public class UserPlayer : Player {
 	{
 		
 		if (positionQueue.Count > 0) {
-			transform.position += (positionQueue[0] - transform.position).normalized * moveSpeed * Time.deltaTime;
+
+			Vector3 lookat = positionQueue [0] - transform.position;
+			lookat.Normalize ();
+			transform.forward = lookat;
 			
+			anim.SetBool ("walking", true);
+			transform.position += (positionQueue[0] - transform.position).normalized * moveSpeed * Time.deltaTime;
+			Debug.Log (moveSpeed);
 			if (Vector3.Distance(positionQueue[0], transform.position) <= 0.1f) {
 				transform.position = positionQueue[0];
 				positionQueue.RemoveAt(0);
 				if (positionQueue.Count == 0) {
 					actionPoints--;
+					anim.SetBool ("walking", false);
 				}
 			}
 			

@@ -59,7 +59,7 @@ public class Tile : MonoBehaviour {
 	
 	void OnMouseDown() {
 		
-	//	if(GameManager.instance.currentPlayerIndex != 0){return ;}	// 如果目前行動者不是玩家自己則不做任何事
+		//if(GameManager.instance.currentPlayerIndex != 0){return ;}	// 如果目前行動者不是玩家自己則不做任何事
 		
 		if (Application.loadedLevelName == "gameScene") {
 			if (GameManager.instance.players[GameManager.instance.currentPlayerIndex].attacking) {
@@ -217,6 +217,7 @@ public class Tile : MonoBehaviour {
 
 	public void generateVisuals() {
 		GameObject container = transform.FindChild("Visuals").gameObject;
+//        container.AddComponent<DCM.DrawCallMinimizer>();
 		//initially remove all children
 		for(int i = 0; i < container.transform.childCount; i++) {
 			Destroy (container.transform.GetChild(i).gameObject);
@@ -224,7 +225,9 @@ public class Tile : MonoBehaviour {
 
 		GameObject newVisual = (GameObject)Instantiate(PREFAB, transform.position, Quaternion.Euler(new Vector3(0,0,0)));
 		newVisual.transform.parent = container.transform;
-//        newVisual.AddComponent(DrawCallMinimizer(typeof(DrawCallMinimizer)));
+        newVisual.transform.parent.gameObject.tag="new";
+
 		visual = newVisual;
+
 	}
 }

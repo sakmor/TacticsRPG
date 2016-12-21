@@ -16,7 +16,7 @@ public class MapCreatorManager : MonoBehaviour {
 	void Awake () {
 		instance = this;
 		mapTransform = transform.FindChild("Map");
-		generateBlankMap(22);
+		generateBlankMap(25);
 	}
 
 	void generateBlankMap(int mSize) {

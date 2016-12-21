@@ -7,13 +7,13 @@ public class Player : MonoBehaviour {
 	public Vector2 gridPosition = Vector2.zero;
 	
 	public Vector3 moveDestination;
-	public float moveSpeed = 10.0f;
+	public float moveSpeed = 3.0f;
 
 	public bool moving = false;
 	public bool attacking = false;
 		
 	public string playerName = "George";
-	public int HP = 25;
+	public int HP = 500;
 	internal int actionPoints = 1;
 
 	public Armor headArmor;
@@ -23,10 +23,10 @@ public class Player : MonoBehaviour {
 
 	public List<Weapon> handWeapons = new List<Weapon>();
 
-	public float baseAttackChance = 0.75f;
-	public float baseEvade = 0.15f;
+	public float baseAttackChance =1;
+	public float baseEvade = 0f;
 	public int baseMovementPerActionPoint = 1;
-	public int baseAttackRange = 0;
+	public int baseAttackRange = 1;
 	public int baseDamageReduction = 0;
 	public int baseDamageBase = 0;
 	public int baseDamageRollSides = 1; //d6
@@ -182,8 +182,8 @@ public class Player : MonoBehaviour {
 	// Update
 	public virtual void Update () {		
 		if (HP <= 0) {
-			transform.rotation = Quaternion.Euler(new Vector3(90,0,0));
-			transform.GetComponent<Renderer>().material.color = Color.red;
+			//transform.rotation = Quaternion.Euler(new Vector3(90,0,0));
+			//transform.GetComponent<Renderer>().material.color = Color.red;
 		}
 	}
 	
@@ -199,7 +199,7 @@ public class Player : MonoBehaviour {
 	public virtual void TurnOnGUI () {}
 	// 介面 顯示hp
 	public void OnGUI() {
-		Vector3 location = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 35;
-		GUI.TextArea(new Rect(location.x, Screen.height - location.y, 30, 20), HP.ToString());
+//		Vector3 location = Camera.main.WorldToScreenPoint(transform.position) + Vector3.up * 35;
+//		GUI.TextArea(new Rect(location.x, Screen.height - location.y, 30, 20), HP.ToString());
 	}
 }

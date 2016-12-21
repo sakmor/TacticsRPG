@@ -1,0 +1,25 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 21.21.13.7595]
+    Renderer: NVIDIA GeForce GTX 960M
+    Vendor:   NVIDIA
+    VRAM:     3072 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 NULL=1 RESZ=0 SlowINTZ=0 ATOC=1 BC4=1 BC5=1
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.204 seconds
+Platform assembly: C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\SAKMOR-UX\Documents\GitHub\TacticsRPG\TacticsRPG_Data\Managed\System.dll (this message is harmless)
+desktop: 3840x2160 60Hz; virtual: 3840x2160 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
