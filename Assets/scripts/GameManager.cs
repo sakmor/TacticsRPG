@@ -55,14 +55,14 @@ public class GameManager : MonoBehaviour {
             foreach (Transform child in respawn.transform)
             {
                child.parent=GameObject.Find("VisualTile").transform;
-                            foreach (Transform child2 in child.transform)
-            {
-               child2.parent=GameObject.Find("VisualTile").transform;
-            }
+                foreach (Transform child2 in child.transform)
+                {
+                child2.parent=GameObject.Find("VisualTile").transform;
+                }
             }
         }
 
-//        GameObject.Find("VisualTile").AddComponent<DCM.DrawCallMinimizer>();
+        GameObject.Find("VisualTile").AddComponent<DCM.DrawCallMinimizer>();
 
 
     }
